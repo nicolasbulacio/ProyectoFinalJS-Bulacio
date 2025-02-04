@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carga de alumnos</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    
+    <div class="container mt-5">
+        <h1 class="text-center mb-4"> Carga de Alumnos </h1>
+        <h2>Formulario de Alumnos</h2>
+        <form id="formularioAlumno" class="mb-4">
+            <div class="form-group">
+                <label for="nombre">Nombre del Alumno</label>
+                <input type="text" class="form-control" id="nombre" placeholder="Ingresa el nombre del alumno" required>
+            </div>
+            <div class="form-group">
+                <label for="nota1">Nota Primer Trimestre</label>
+                <input type="number" class="form-control" id="nota1" placeholder="Ingresa la nota del primer trimestre" required>
+            </div>
+            <div class="form-group">
+                <label for="nota2">Nota Segundo Trimestre</label>
+                <input type="number" class="form-control" id="nota2" placeholder="Ingresa la nota del segundo trimestre" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="nota3">Nota Tercer Trimestre</label>
+                <input type="number" class="form-control" id="nota3" placeholder="Ingresa la nota del tercer trimestre" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Agregar Alumno</button> 
+
+            <button id="mostrar" class="btn btn-success">Mostrar Alumnos Aprobados</button>
+        </form>
+
+    </div>
+    
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <script src="main.js"></script>
+</body>
+</html>
