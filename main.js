@@ -94,6 +94,35 @@ function filtrarAprobados() {
     }
 }
 
+function mostrarTodosLosAlumnos() {
+    if (cursado.length > 0) {
+        let mensaje = cursado.map(alumno => {
+            let promedio = alumno.promedio().toFixed(2);
+            return `${alumno.nombre} (Promedio: ${promedio})`;
+        }).join("\n");
+
+        Swal.fire({
+            title: 'Todos los Alumnos',
+            text: mensaje,
+            icon: 'info',
+            confirmButtonText: 'Aceptar'
+        });
+    } else {
+        Swal.fire({
+            title: 'No hay alumnos registrados',
+            text: 'Aún no se han agregado alumnos.',
+            icon: 'warning',
+            confirmButtonText: 'Aceptar'
+        });
+    }
+}
+
+let mostrarTodosBoton = document.getElementById("mostrarTodos");
+mostrarTodosBoton.addEventListener("click", function(event) {
+    event.preventDefault();
+    mostrarTodosLosAlumnos();
+});
+
 let agregarFormulario = document.getElementById("formularioAlumno");
 agregarFormulario.addEventListener("submit", agregarAlumnos);
 
