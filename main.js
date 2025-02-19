@@ -117,8 +117,8 @@ function mostrarTodosLosAlumnos() {
     }
 }
 
-let mostrarTodosBoton = document.getElementById("mostrarTodos");
-mostrarTodosBoton.addEventListener("click", function(event) {
+let mostrarTodos = document.getElementById("mostrarTodos");
+mostrarTodos.addEventListener("click", function(event) {
     event.preventDefault();
     mostrarTodosLosAlumnos();
 });
