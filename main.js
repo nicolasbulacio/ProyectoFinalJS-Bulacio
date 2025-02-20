@@ -117,6 +117,37 @@ function mostrarTodosLosAlumnos() {
     }
 }
 
+function filtrarDesaprobados() {
+    let aprobado = cursado.filter(alumno => alumno.promedio() < 6);
+    if (aprobado.length > 0) {
+        let mensaje = aprobado.map(alumno => {
+            
+            let promedio = alumno.promedio().toFixed(2);
+            return `${alumno.nombre} (Promedio: ${promedio})`;
+        }).join("\n");
+
+        Swal.fire({
+            title: 'Alumnos Desaprobados',
+            text: mensaje,
+            icon: 'info',
+            confirmButtonText: 'Aceptar'
+        });
+    } else {
+        Swal.fire({
+            title: 'No hay alumnos Desaprobados',
+            text: 'No hay alumnos con promedio mayor o igual a 6.',
+            icon: 'warning',
+            confirmButtonText: 'Aceptar'
+        });
+    }
+}
+
+let mostrarDesaprobados= document.getElementById("desaprobados")
+mostrarDesaprobados.addEventListener("click", function(event){
+    event.preventDefault();
+    filtrarDesaprobados();
+})
+
 let mostrarTodos = document.getElementById("mostrarTodos");
 mostrarTodos.addEventListener("click", function(event) {
     event.preventDefault();
